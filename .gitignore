@@ -1,0 +1,13 @@
+# Raw corpus data - not tracked, fetched on demand
+*.csv
+!01_extraction/boundary_filtered_*.csv
+!02_aggregation/monthly_*.csv
+data_raw/
+*.parquet.raw
+
+# Colab / Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
