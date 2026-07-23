@@ -1,0 +1,21 @@
+Issue,Address,Records,Detection Method,Treatment,Rationale
+Ambiguous address excluded,jeffreyskilling@yahoo.com,3,Surname pattern match + content review,Excluded,"Hostile third-party correspondence, not Jeffrey Skilling"
+Ambiguous address excluded,lavorato@sympatico.ca,5,Surname pattern match + content review,Excluded,"Personal/family correspondence, not a work address"
+Ambiguous address confirmed,presto@enron.com,9,Frequency check + content review,Included,Confirmed genuine Kevin Presto correspondence
+Ambiguous address confirmed,kmpresto@hotmail.com,1,Frequency check + content review,Included,"Personal contact-details email, confirmed same person"
+Ambiguous address confirmed,m..presto@enron.com,885,Custodian folder match against kevin.presto@enron.com,Included,784 of 885 records share Presto's custodian folder; confirmed same person
+False positive excluded,ken.skilling@enron.com,246,Surname pattern match + content review,Excluded,"Corporate compliance mailing (Conflict of Interest Policy); institutional distribution address, not an individual, content-verified"
+False positive excluded,mark.skilling@enron.com,1,Surname pattern match,Excluded,Different person (not Jeffrey Skilling)
+False positive excluded,markskilling@hotmail.com,156,Surname pattern match + content review,Excluded,"Personal travel correspondence (""Hello Dad"" letters from Istanbul), unrelated individual, content-verified"
+False positive excluded,tskilling@tribune.com,7,Surname pattern match + domain check,Excluded,"Chicago Tribune weather anchor, unrelated"
+False positive excluded,darin.presto@enron.com,3,Surname pattern match,Excluded,Different Enron employee (not Kevin Presto)
+False positive excluded,darrin_presto@rsd.edu,4,Surname pattern match + domain check,Excluded,"Different person, unrelated domain"
+False positive excluded,donk@prestongates.com,1,Domain check,Excluded,"Law firm (Preston Gates), unrelated"
+False positive excluded,dpresto@clearskybroadband.com,3,Surname pattern match + domain check,Excluded,"Different person, unrelated domain"
+False positive excluded,ericf@prestongates.com,5,Domain check,Excluded,"Law firm (Preston Gates), unrelated"
+False positive excluded,johnl@prestongates.com,4,Domain check,Excluded,"Law firm (Preston Gates), unrelated"
+False positive excluded,prestojj@aol.com,1,Surname pattern match + domain check,Excluded,"Different person, unrelated domain"
+False positive excluded,preston.ochsner@enron.com,16,Surname pattern match,Excluded,Different Enron employee (surname coincidence)
+False positive excluded,preston.roobaert@enron.com,3,Surname pattern match,Excluded,Different Enron employee (surname coincidence)
+False positive excluded,preston.wallace@enron.com,1,Surname pattern match,Excluded,Different Enron employee (surname coincidence)
+Duplicate records (broadcast/resend),"5-person boundary, all",210,"Match on sender, recipient set, timestamp, subject",Removed,"Same message stored once per recipient's mailbox, or duplicated within one custodian's own folders; not distinct communication events"
