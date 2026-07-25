@@ -6,33 +6,42 @@ Executive Leadership–Trading boundary (January 1999 to December 2001).
 
 ## Repository Structure
 
-- `01_extraction/` — CASOS position-file boundary filtering, produces
-  sender/recipient-level cross-boundary email counts
-- `02_aggregation/` — Monthly aggregation of filtered emails into the
-  variables used for centrality and changepoint analysis
-- `03_network_analysis/` — NetworkX centrality measures
+- `01_extraction/` — Boundary-filtered extraction with address-level
+  verification of boundary personnel and deduplication
+  (`qm640_extraction.ipynb`, Steps 1 to 33)
+- `02_aggregation/` — Monthly aggregates (pre- and post-deduplication),
+  volume charts, and the data cleaning log
+- `03_network_analysis/` — NetworkX centrality measures (pending)
 - `04_linguistic_analysis/` — VADER sentiment scoring and BERTopic
-  topic modelling
-- `05_changepoint_detection/` — ruptures-based changepoint detection
-  and statsmodels analysis
+  topic modelling (pending)
+- `05_changepoint_detection/` — CUSUM changepoint detection via
+  statsmodels and ruptures (pending)
 
 ## Data Access
 
-This project uses the CASOS-released Enron email corpus, available at:
+This project uses the publicly released Enron email corpus:
+
 - Enron email corpus: https://huggingface.co/datasets/corbt/enron-emails
-- CASOS position files (role classification): https://www.cs.cmu.edu/~enron/
+- Raw corpus mirror (CMU): https://www.cs.cmu.edu/~enron/
+
+The corpus-linked position-classification file referenced in early
+Enron research is not publicly available (Diesner & Carley, 2005).
+Boundary personnel roles are verified manually against public records
+(regulatory reports, court documents, contemporaneous press coverage);
+the verification is documented in the extraction notebook.
 
 The raw corpus (517,401 emails) is not stored in this repository due to
-size. Scripts in `01_extraction/` fetch it directly. Only boundary-filtered
-outputs and monthly aggregates are committed here.
+size. The extraction notebook fetches it directly. Committed outputs
+(monthly aggregates, charts, data cleaning log) are in `02_aggregation/`.
 
 ## Reproducing the Extraction
 
-1. Open `01_extraction/extraction.ipynb` in Google Colab
-2. Run all cells in order; the notebook fetches the raw corpus and CASOS
-   position files automatically
-3. Outputs are written to `01_extraction/` (boundary-filtered counts) and
-   `02_aggregation/` (monthly aggregates)
+1. Open `01_extraction/qm640_extraction.ipynb` in Google Colab
+2. Run the session setup cells (Steps 1 to 2), then Step 7 onward.
+   Steps 3 to 6 are one-time repository setup and are marked in the
+   notebook as not to be re-run
+3. The corpus is fetched fresh each session; outputs are written to
+   `02_aggregation/`
 
 ## Author
 
