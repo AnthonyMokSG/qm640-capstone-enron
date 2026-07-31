@@ -4,6 +4,7 @@
 !02_aggregation/monthly_*.csv
 !02_aggregation/data_cleaning_log.csv
 !03_network_analysis/*.csv
+!04_linguistic_analysis/*.csv
 data_raw/
 *.parquet.raw
 
