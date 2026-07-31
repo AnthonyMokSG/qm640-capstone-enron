@@ -6,16 +6,23 @@ Executive Leadership–Trading boundary (January 1999 to December 2001).
 
 ## Repository Structure
 
-- `01_extraction/` — Boundary-filtered extraction with address-level
-  verification of boundary personnel and deduplication
-  (`qm640_extraction.ipynb`, Steps 1 to 33)
-- `02_aggregation/` — Monthly aggregates (pre- and post-deduplication),
+All analysis is conducted in a single notebook
+(`01_extraction/qm640_extraction.ipynb`), which continues through the
+project's four analysis stages; each stage writes its outputs to its
+own folder below.
+
+- `01_extraction/` - The project notebook: boundary-filtered extraction
+  with address-level verification of boundary personnel, deduplication,
+  effective-N and power verification (Steps 1 to 34), continuing into
+  the Stage 1 to 4 analysis pipeline
+- `02_aggregation/` - Monthly aggregates (pre- and post-deduplication),
   volume charts, and the data cleaning log
-- `03_network_analysis/` — NetworkX centrality measures (pending)
-- `04_linguistic_analysis/` — VADER sentiment scoring and BERTopic
-  topic modelling (pending)
-- `05_changepoint_detection/` — CUSUM changepoint detection via
-  statsmodels and ruptures (pending)
+- `03_network_analysis/` - Stage 1 outputs: NetworkX degree centrality
+  measures (in progress)
+- `04_linguistic_analysis/` - Stage 2 outputs: VADER sentiment scoring
+  and BERTopic topic modelling (pending)
+- `05_changepoint_detection/` - Stage 3 and 4 outputs: composite index
+  and CUSUM changepoint detection via statsmodels and ruptures (pending)
 
 ## Data Access
 
@@ -28,22 +35,24 @@ The corpus-linked position-classification file referenced in early
 Enron research is not publicly available (Diesner & Carley, 2005).
 Boundary personnel roles are verified manually against public records
 (regulatory reports, court documents, contemporaneous press coverage);
-the verification is documented in the extraction notebook.
+the verification is documented in the notebook.
 
 The raw corpus (517,401 emails) is not stored in this repository due to
-size. The extraction notebook fetches it directly. Committed outputs
-(monthly aggregates, charts, data cleaning log) are in `02_aggregation/`.
+size. The notebook fetches it directly. Committed outputs are in the
+stage folders listed above.
 
-## Reproducing the Extraction
+## Reproducing the Analysis
 
 1. Open `01_extraction/qm640_extraction.ipynb` in Google Colab
 2. Run the session setup cells (Steps 1 to 2), then Step 7 onward.
    Steps 3 to 6 are one-time repository setup and are marked in the
    notebook as not to be re-run
 3. The corpus is fetched fresh each session; outputs are written to
-   `02_aggregation/`
+   the relevant stage folder (`02_aggregation/` for extraction and
+   aggregation, `03_network_analysis/` onward for the analysis stages)
 
 ## Author
 
 Anthony Mok, Walsh College, QM640 Data Analytics Capstone
-Supervised by Sharath Srivatsa; Faculty Mentor Dr. Srabashi Basu
+- Mentored by Mr Sharath Srivatsa
+- Faculty Supervisors: Dr. Javad Katibai & Dr. Srabashi Basu
