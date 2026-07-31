@@ -11,17 +11,17 @@ All analysis is conducted in a single notebook
 project's four analysis stages; each stage writes its outputs to its
 own folder below.
 
-- `01_extraction/` — The project notebook: boundary-filtered extraction
+- `01_extraction/` - The project notebook: boundary-filtered extraction
   with address-level verification of boundary personnel, deduplication,
   effective-N and power verification (Steps 1 to 34), continuing into
   the Stage 1 to 4 analysis pipeline
-- `02_aggregation/` — Monthly aggregates (pre- and post-deduplication),
+- `02_aggregation/` - Monthly aggregates (pre- and post-deduplication),
   volume charts, and the data cleaning log
-- `03_network_analysis/` — Stage 1 outputs: NetworkX degree centrality
+- `03_network_analysis/` - Stage 1 outputs: NetworkX degree centrality
   measures (in progress)
-- `04_linguistic_analysis/` — Stage 2 outputs: VADER sentiment scoring
+- `04_linguistic_analysis/` - Stage 2 outputs: VADER sentiment scoring
   and BERTopic topic modelling (pending)
-- `05_changepoint_detection/` — Stage 3 and 4 outputs: composite index
+- `05_changepoint_detection/` - Stage 3 and 4 outputs: composite index
   and CUSUM changepoint detection via statsmodels and ruptures (pending)
 
 ## Data Access
