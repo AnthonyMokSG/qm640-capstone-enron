@@ -54,5 +54,5 @@ stage folders listed above.
 ## Author
 
 Anthony Mok, Walsh College, QM640 Data Analytics Capstone
-- Supervised by Sharath Srivatsa
-- Faculty Mentor Dr. Srabashi Basu
+- Mentored by Mr Sharath Srivatsa
+- Faculty Supervisors: Dr. Javad Katibai & Dr. Srabashi Basu
