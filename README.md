@@ -7,22 +7,26 @@ Executive Leadership–Trading boundary (January 1999 to December 2001).
 ## Repository Structure
 
 All analysis is conducted in a single notebook
-(`01_extraction/qm640_extraction.ipynb`), which continues through the
+(`01_extraction/qm640_extraction.ipynb`), which runs through the
 project's four analysis stages; each stage writes its outputs to its
 own folder below.
 
-- `01_extraction/` - The project notebook: boundary-filtered extraction
+- `01_extraction/` — The project notebook: boundary-filtered extraction
   with address-level verification of boundary personnel, deduplication,
-  effective-N and power verification (Steps 1 to 34), continuing into
-  the Stage 1 to 4 analysis pipeline
-- `02_aggregation/` - Monthly aggregates (pre- and post-deduplication),
+  effective-N and power verification (Steps 1 to 34), and the Stage 1
+  to 4 analysis pipeline (Steps 35 to 54)
+- `02_aggregation/` — Monthly aggregates (pre- and post-deduplication),
   volume charts, and the data cleaning log
-- `03_network_analysis/` - Stage 1 outputs: NetworkX degree centrality
-  measures (in progress)
-- `04_linguistic_analysis/` - Stage 2 outputs: VADER sentiment scoring
-  and BERTopic topic modelling (pending)
-- `05_changepoint_detection/` - Stage 3 and 4 outputs: composite index
-  and CUSUM changepoint detection via statsmodels and ruptures (pending)
+- `03_network_analysis/` — Stage 1 outputs (complete): monthly NetworkX
+  degree centrality series and chart
+- `04_linguistic_analysis/` — Stage 2 outputs (sentiment component
+  complete): VADER monthly sentiment series with dispersion and tail
+  measures, and chart; BERTopic topic component scheduled
+- `05_changepoint_detection/` — Stage 3 and 4 outputs (complete):
+  pre-registered ground-truth labels, composite index, precision
+  evaluation under the pre-registered and sensitivity specifications,
+  bootstrap inference, and CUSUM changepoint detection with a
+  disclosed restart sensitivity
 
 ## Data Access
 
@@ -47,12 +51,16 @@ stage folders listed above.
 2. Run the session setup cells (Steps 1 to 2), then Step 7 onward.
    Steps 3 to 6 are one-time repository setup and are marked in the
    notebook as not to be re-run
-3. The corpus is fetched fresh each session; outputs are written to
-   the relevant stage folder (`02_aggregation/` for extraction and
-   aggregation, `03_network_analysis/` onward for the analysis stages)
+3. The corpus is fetched fresh each session for the extraction and
+   Stage 1 to 2 steps; Stages 3 and 4 (Steps 45 onward) read only the
+   committed CSVs in the stage folders, so they are reproducible
+   without the corpus fetch
+4. Outputs are written to the relevant stage folder (`02_aggregation/`
+   for extraction and aggregation, `03_network_analysis/` onward for
+   the analysis stages)
 
 ## Author
 
-Anthony Mok, Walsh College, QM640 Data Analytics Capstone
-- Mentored by Mr Sharath Srivatsa
-- Faculty Supervisors: Dr. Javad Katibai & Dr. Srabashi Basu
+Anthony Mok, Walsh College, QM640 Data Analytics Capstone;
+Mentored by Mr Sharath Srivatsa;
+Faculty Supervisors: Dr. Javad Katibai & Dr. Srabashi Basu
