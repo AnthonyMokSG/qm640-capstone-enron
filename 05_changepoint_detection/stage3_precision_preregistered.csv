@@ -1,0 +1,4 @@
+approach,months_flagged,n_flagged,TP,FP,precision
+z_centrality,"['2000-07', '2000-11', '2001-08', '2001-09']",4,2,2,0.5
+z_sentiment,['2001-01'],1,0,1,0.0
+composite_index,[],0,0,0,undefined
