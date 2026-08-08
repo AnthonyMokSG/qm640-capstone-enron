@@ -1,8 +1,7 @@
 # Raw corpus data - not tracked, fetched on demand
 *.csv
 !01_extraction/boundary_filtered_*.csv
-!02_aggregation/monthly_*.csv
-!02_aggregation/data_cleaning_log.csv
+!02_aggregation/*.csv
 !03_network_analysis/*.csv
 !04_linguistic_analysis/*.csv
 !05_changepoint_detection/*.csv
