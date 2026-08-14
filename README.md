@@ -19,9 +19,11 @@ their superseded counterparts.
   address-level verification, first-pass deduplication, effective-N and
   power verification (Steps 1 to 34); the superseded analysis run
   (Steps 35 to 54); the June 2001 content examination, second-pass
-  deduplication discovery and correction (Steps 58 to 60); and the
+  deduplication discovery and correction (Steps 58 to 60); the
   corrected analysis pipeline with deferred inference and the topic
-  component (Steps 55 to 56, 61 to 65)
+  component (Steps 55 to 56, 61 to 65); and the report-asset steps:
+  corrected report figures, environment capture, and the architecture
+  diagram (Steps 66 to 68)
 - `02_aggregation/` — Monthly aggregates, volume charts, the 20-entry
   cleaning log, and the second-pass duplicate audit
   (second_pass_duplicate_audit.csv, second_pass_dropped_records.csv)
@@ -35,6 +37,8 @@ their superseded counterparts.
   ground-truth labels, composite index, precision evaluations,
   bootstrap inference, CUSUM runs (superseded and corrected), and the
   deferred inferential test results
+- `report_assets/` — Final Report figure assets: the end-to-end
+  architecture diagram (Step 68)
 
 ## Data Correction Note
 
@@ -70,9 +74,10 @@ size. The notebook fetches it directly.
    one-time repository setup; Steps 35 to 54 are the superseded run —
    both are marked in the notebook as not to be re-run
 3. The corrected pipeline (Steps 61 to 65) reads only the committed
-   CSVs in the stage folders, so it is reproducible without the corpus
-   fetch. Step 62 applies VADER scoring internally, so no superseded
-   step is a dependency
+   CSVs in the stage folders, as do the report-asset steps (66 to 68),
+   so Steps 61 to 68 are reproducible without the corpus fetch. Step 62
+   applies VADER scoring internally, so no superseded step is a
+   dependency
 4. Expected checkpoints are stated in the notebook's run-sequence
    guidance (33/37/250 at Step 59; 37 and 73/177 at Step 60)
 
