@@ -22,11 +22,11 @@ their superseded counterparts.
   deduplication discovery and correction (Steps 58 to 60); the
   corrected analysis pipeline with deferred inference and the topic
   component (Steps 55 to 56, 61 to 65); and the report-asset steps:
-  corrected report figures, environment capture, and the architecture
-  diagram (Steps 66 to 68)
-- `02_aggregation/` — Monthly aggregates, volume charts, the 20-entry
-  cleaning log, and the second-pass duplicate audit
-  (second_pass_duplicate_audit.csv, second_pass_dropped_records.csv)
+  corrected report figures, environment capture, the architecture
+  diagram, and the corrected volume figure (Steps 66 to 69)
+- `02_aggregation/` — Monthly aggregates, volume charts (superseded and
+  corrected), the 20-entry cleaning log, and the second-pass duplicate
+  audit (second_pass_duplicate_audit.csv, second_pass_dropped_records.csv)
 - `03_network_analysis/` — Stage 1 outputs: monthly degree centrality,
   superseded and corrected series and charts
 - `04_linguistic_analysis/` — Stage 2 outputs: monthly VADER sentiment,
@@ -74,8 +74,8 @@ size. The notebook fetches it directly.
    one-time repository setup; Steps 35 to 54 are the superseded run —
    both are marked in the notebook as not to be re-run
 3. The corrected pipeline (Steps 61 to 65) reads only the committed
-   CSVs in the stage folders, as do the report-asset steps (66 to 68),
-   so Steps 61 to 68 are reproducible without the corpus fetch. Step 62
+   CSVs in the stage folders, as do the report-asset steps (66 to 69),
+   so Steps 61 to 69 are reproducible without the corpus fetch. Step 62
    applies VADER scoring internally, so no superseded step is a
    dependency
 4. Expected checkpoints are stated in the notebook's run-sequence
